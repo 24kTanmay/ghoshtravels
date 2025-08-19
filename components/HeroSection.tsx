@@ -12,8 +12,16 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-surface to-dark-bg opacity-50"></div>
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/hero_image.png)'
+        }}
+      ></div>
+      
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/70 via-dark-surface/60 to-dark-bg/70"></div>
       
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -22,14 +30,13 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Premium
-            <span className="block text-gold-500 mt-2">Poker Cards</span>
+          <h1 className="mb-8 leading-relaxed">
+            <span className="text-2xl md:text-4xl lg:text-5xl font-medium text-dark-text-secondary block mb-3 leading-relaxed">Host a</span>
+            <span className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent block leading-relaxed py-2">Legendary Game Night</span>
           </h1>
           
           <p className="text-lg md:text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
-            Experience the ultimate in card quality with Ldorado&apos;s premium poker cards. 
-            Professional grade materials, perfect for tournaments and casual games.
+            Eldorado: A casino-grade poker set crafted for players who demand the finest.
           </p>
           
           <motion.button
@@ -38,12 +45,12 @@ export default function HeroSection() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Buy Now
+            Claim Your Set
           </motion.button>
         </motion.div>
 
         {/* Floating card animation */}
-        <motion.div
+        {/* <motion.div
           className="absolute top-1/4 left-10 w-16 h-24 bg-gradient-to-br from-red-600 to-red-800 rounded-lg shadow-xl opacity-20"
           animate={{
             y: [-10, 10, -10],
@@ -67,7 +74,7 @@ export default function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-        />
+        /> */}
       </div>
     </section>
   )

@@ -5,23 +5,23 @@ import { motion } from 'framer-motion'
 const products = [
   {
     id: 1,
-    name: 'Classic Collection',
-    description: 'Traditional poker cards with premium finish',
-    image: '/api/placeholder/300/400',
+    name: 'Casino-Weight Chips',
+    description: 'Feel the difference with our 14-gram, clay composite chips. Engineered for the perfect stack and that satisfying casino sound.',
+    image: '/chips.jpeg',
     features: ['Premium cardstock', 'Linen finish', 'Standard size']
   },
   {
     id: 2,
-    name: 'Royal Collection',
-    description: 'Luxury cards for professional tournaments',
-    image: '/api/placeholder/300/400',
+    name: 'Premium Playing Cards',
+    description: 'Two decks of smooth-gliding, durable cards that are built to last. Designed for the perfect shuffle and deal, every time.',
+    image: '/card.jpeg',
     features: ['Casino quality', 'Plastic coating', 'Jumbo index']
   },
   {
     id: 3,
-    name: 'Diamond Collection',
-    description: 'Ultra-premium cards with diamond-cut edges',
-    image: '/api/placeholder/300/400',
+    name: 'Durable Aluminum Case',
+    description: 'Protect your investment in a sleek, lockable aluminum case. Lined with soft felt to keep every piece secure and ready for action.',
+    image: '/case.png',
     features: ['Diamond cut', 'Gold foiling', 'Limited edition']
   }
 ]
@@ -38,7 +38,7 @@ export default function ProductsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="text-gold-500">Collections</span>
+            What's Inside <span className="text-gold-500">the Case?</span>
           </h2>
           <p className="text-lg md:text-xl text-dark-text-secondary max-w-3xl mx-auto">
             Choose from our carefully curated collections of premium poker cards, 
@@ -57,9 +57,17 @@ export default function ProductsSection() {
               className="bg-dark-surface border border-dark-border rounded-xl p-6 hover:border-gold-500/50 transition-all duration-300 group"
             >
               <div className="aspect-[3/4] bg-dark-card rounded-lg mb-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-black/60 flex items-center justify-center">
-                  <div className="text-6xl opacity-20">♠</div>
-                </div>
+                {product.image ? (
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-black/60 flex items-center justify-center">
+                    <div className="text-6xl opacity-20">♠</div>
+                  </div>
+                )}
               </div>
               
               <h3 className="text-xl font-semibold mb-3 group-hover:text-gold-500 transition-colors duration-300">

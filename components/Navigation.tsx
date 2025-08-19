@@ -38,7 +38,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <Logo 
-              className="text-gold-400 hover:text-gold-300 cursor-pointer"
+              className="cursor-pointer transition-all duration-300 hover:scale-105 drop-shadow-[0_0_8px_rgba(251,191,36,0.4)] hover:drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]"
               size={50}
             />
           </div>
