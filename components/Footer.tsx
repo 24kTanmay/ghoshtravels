@@ -19,12 +19,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-6">
-              <Logo 
-                className="text-gold-400"
-                size={40}
+            <div className="flex items-center mb-6">
+              <img
+                src="/with_font.svg"
+                alt="Ldorado"
+                className="h-12 text-gold-400"
+                style={{ filter: 'brightness(0) saturate(100%) invert(77%) sepia(29%) saturate(1352%) hue-rotate(7deg) brightness(98%) contrast(93%)' }}
               />
-              <span className="text-xl font-bold text-white">Ldorado</span>
             </div>
             <p className="text-dark-text-secondary leading-relaxed mb-6">
               Premium quality poker cards designed for enthusiasts, professionals, and tournaments. 
