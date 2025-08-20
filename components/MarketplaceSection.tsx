@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { ExternalLink } from 'lucide-react'
 
 export default function MarketplaceSection() {
@@ -32,9 +33,11 @@ export default function MarketplaceSection() {
             className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group"
           >
             <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center p-3">
-              <img 
+              <Image 
                 src="/amazon_logo.png" 
                 alt="Amazon" 
+                width={80}
+                height={80}
                 className="w-full h-full object-contain"
               />
             </div>
@@ -59,9 +62,11 @@ export default function MarketplaceSection() {
             className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group"
           >
             <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center p-3" style={{ backgroundColor: '#ffe70b' }}>
-              <img 
+              <Image 
                 src="/flipkart_logo.png" 
                 alt="Flipkart" 
+                width={80}
+                height={80}
                 className="w-full h-full object-contain"
               />
             </div>

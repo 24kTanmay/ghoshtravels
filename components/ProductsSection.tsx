@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const products = [
   {
@@ -38,7 +39,7 @@ export default function ProductsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What's Inside <span className="text-gold-500">the Case?</span>
+            What&apos;s Inside <span className="text-gold-500">the Case?</span>
           </h2>
           <p className="text-lg md:text-xl text-dark-text-secondary max-w-3xl mx-auto">
             From the satisfying weight of the chips to the smooth glide of the cards, every detail is designed to elevate your game.
@@ -57,9 +58,11 @@ export default function ProductsSection() {
             >
               <div className="aspect-[3/4] bg-dark-card rounded-lg mb-6 relative overflow-hidden">
                 {product.image ? (
-                  <img 
+                  <Image 
                     src={product.image} 
                     alt={product.name}
+                    width={400}
+                    height={533}
                     className="w-full h-full object-cover"
                   />
                 ) : (

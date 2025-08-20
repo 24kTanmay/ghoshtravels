@@ -1,6 +1,7 @@
 'use client'
 
 import LogoText from './Logotext'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 
 export default function Footer() {
@@ -68,7 +69,7 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-dark-text-secondary hover:text-gold-400 transition-colors duration-300 group"
               >
                 <span className="w-6 h-6 bg-white rounded flex items-center justify-center text-xs font-bold">
-                  <img src="/amazon_logo.png" alt="A" className="w-4 h-4 object-contain" />
+                  <Image src="/amazon_logo.png" alt="Amazon" width={16} height={16} className="object-contain" />
                 </span>
                 <span>Amazon</span>
                 <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -78,7 +79,7 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-dark-text-secondary hover:text-gold-400 transition-colors duration-300 group"
               >
                 <span className="w-6 h-6 rounded flex items-center justify-center text-xs font-bold" style={{ backgroundColor: '#ffe70b' }}>
-                  <img src="/flipkart_logo.png" alt="F" className="w-4 h-4 object-contain" />
+                  <Image src="/flipkart_logo.png" alt="Flipkart" width={16} height={16} className="object-contain" />
                 </span>
                 <span>Flipkart</span>
                 <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
