@@ -7,17 +7,17 @@ const features = [
   {
     icon: Shield,
     title: 'Premium Quality',
-    description: 'Made with the finest materials and precision manufacturing for durability that lasts.'
+    description: 'From the 14-gram clay composite chips to the smooth-finish playing cards, every component is crafted for durability and a satisfying, authentic feel.'
   },
   {
     icon: Award,
-    title: 'Tournament Grade',
-    description: 'Professional quality cards used in casinos and tournaments worldwide.'
+    title: 'Designed for Players',
+    description: 'Our sets are curated to deliver a true casino experience. The design, weight, and details are all optimized for players who take the game seriously.'
   },
   {
     icon: Truck,
     title: 'Fast Shipping',
-    description: 'Quick delivery through Amazon and Flipkart with reliable tracking.'
+    description: 'Sold through trusted platforms like Amazon and Flipkart, you get fast, secure shipping and the reliable customer service you already know and trust.'
   }
 ]
 
@@ -33,11 +33,10 @@ export default function QualitySection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why Choose <span className="text-gold-500">Ldorado</span>?
+            The <span className="text-gold-500">Ldorado</span> Difference
           </h2>
           <p className="text-lg md:text-xl text-dark-text-secondary max-w-3xl mx-auto">
-            We&apos;re committed to delivering the highest quality poker cards that meet 
-            professional standards and exceed your expectations.
+            We believe a legendary game night starts with professional-grade equipment. Here&apos;s our promise to you.
           </p>
         </motion.div>
 
@@ -65,32 +64,6 @@ export default function QualitySection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Stats section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-center"
-        >
-          <div>
-            <div className="text-3xl md:text-4xl font-bold text-gold-500 mb-2">1000+</div>
-            <div className="text-dark-text-secondary">Happy Customers</div>
-          </div>
-          <div>
-            <div className="text-3xl md:text-4xl font-bold text-gold-500 mb-2">50+</div>
-            <div className="text-dark-text-secondary">Tournaments</div>
-          </div>
-          <div>
-            <div className="text-3xl md:text-4xl font-bold text-gold-500 mb-2">5★</div>
-            <div className="text-dark-text-secondary">Average Rating</div>
-          </div>
-          <div>
-            <div className="text-3xl md:text-4xl font-bold text-gold-500 mb-2">24/7</div>
-            <div className="text-dark-text-secondary">Support</div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

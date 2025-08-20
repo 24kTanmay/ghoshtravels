@@ -36,7 +36,7 @@ export default function HeroSection() {
           </h1>
           
           <p className="text-lg md:text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
-            Eldorado: A casino-grade poker set crafted for players who demand the finest.
+            Ldorado: A casino-grade poker set crafted for players who demand the finest.
           </p>
           
           <motion.button

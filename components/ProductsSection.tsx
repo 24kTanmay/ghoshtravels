@@ -7,7 +7,7 @@ const products = [
     id: 1,
     name: 'Casino-Weight Chips',
     description: 'Feel the difference with our 14-gram, clay composite chips. Engineered for the perfect stack and that satisfying casino sound.',
-    image: '/chips.jpeg',
+    image: '/chips.png',
     features: ['Premium cardstock', 'Linen finish', 'Standard size']
   },
   {
@@ -41,8 +41,7 @@ export default function ProductsSection() {
             What's Inside <span className="text-gold-500">the Case?</span>
           </h2>
           <p className="text-lg md:text-xl text-dark-text-secondary max-w-3xl mx-auto">
-            Choose from our carefully curated collections of premium poker cards, 
-            each designed for different playing styles and preferences.
+            From the satisfying weight of the chips to the smooth glide of the cards, every detail is designed to elevate your game.
           </p>
         </motion.div>
 

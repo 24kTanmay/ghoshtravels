@@ -15,10 +15,10 @@ export default function MarketplaceSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Available on Leading <span className="text-gold-500">Marketplaces</span>
+            Ready to <span className="text-gold-500">Deal?</span>
           </h2>
           <p className="text-lg md:text-xl text-dark-text-secondary max-w-3xl mx-auto">
-            Get your premium Ldorado poker cards delivered fast through trusted e-commerce platforms.
+            Get your premium Ldorado poker set delivered fast through trusted e-commerce platforms.
           </p>
         </motion.div>
 
@@ -31,8 +31,12 @@ export default function MarketplaceSection() {
             viewport={{ once: true }}
             className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group"
           >
-            <div className="w-20 h-20 mx-auto mb-6 bg-orange-500/10 rounded-full flex items-center justify-center">
-              <span className="text-3xl font-bold text-orange-500">A</span>
+            <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center p-3">
+              <img 
+                src="/amazon_logo.png" 
+                alt="Amazon" 
+                className="w-full h-full object-contain"
+              />
             </div>
             
             <h3 className="text-2xl font-semibold mb-4">Amazon</h3>
@@ -40,7 +44,7 @@ export default function MarketplaceSection() {
               Fast delivery, secure payment, and easy returns with Amazon Prime benefits.
             </p>
             
-            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 group-hover:scale-105">
+            <button className="w-full bg-gold-500/20 hover:bg-gold-500/30 text-gold-400 hover:text-gold-300 border border-gold-500/30 hover:border-gold-500/50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 group-hover:scale-105">
               <span>Buy on Amazon</span>
               <ExternalLink size={18} />
             </button>
@@ -54,8 +58,12 @@ export default function MarketplaceSection() {
             viewport={{ once: true }}
             className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group"
           >
-            <div className="w-20 h-20 mx-auto mb-6 bg-blue-500/10 rounded-full flex items-center justify-center">
-              <span className="text-3xl font-bold text-blue-500">F</span>
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center p-3" style={{ backgroundColor: '#ffe70b' }}>
+              <img 
+                src="/flipkart_logo.png" 
+                alt="Flipkart" 
+                className="w-full h-full object-contain"
+              />
             </div>
             
             <h3 className="text-2xl font-semibold mb-4">Flipkart</h3>
@@ -63,7 +71,7 @@ export default function MarketplaceSection() {
               Reliable delivery across India with secure payment options and quality assurance.
             </p>
             
-            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 group-hover:scale-105">
+            <button className="w-full bg-gold-500/20 hover:bg-gold-500/30 text-gold-400 hover:text-gold-300 border border-gold-500/30 hover:border-gold-500/50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 group-hover:scale-105">
               <span>Buy on Flipkart</span>
               <ExternalLink size={18} />
             </button>
@@ -81,8 +89,8 @@ export default function MarketplaceSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center">
               <div className="text-4xl mb-3">🚚</div>
-              <h4 className="font-semibold mb-2">Free Shipping</h4>
-              <p className="text-dark-text-secondary text-sm">On orders above ₹499</p>
+              <h4 className="font-semibold mb-2">Fast & Reliable Shipping</h4>
+              <p className="text-dark-text-secondary text-sm">Quick delivery you can count on</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="text-4xl mb-3">🔒</div>
@@ -91,8 +99,8 @@ export default function MarketplaceSection() {
             </div>
             <div className="flex flex-col items-center">
               <div className="text-4xl mb-3">↩️</div>
-              <h4 className="font-semibold mb-2">Easy Returns</h4>
-              <p className="text-dark-text-secondary text-sm">7-day return policy</p>
+              <h4 className="font-semibold mb-2">Hassle-Free Returns</h4>
+              <p className="text-dark-text-secondary text-sm">Easy returns when you need them</p>
             </div>
           </div>
         </motion.div>
