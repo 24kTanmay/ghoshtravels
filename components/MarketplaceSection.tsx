@@ -25,13 +25,7 @@ export default function MarketplaceSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Amazon Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group"
-          >
+          <div className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group">
             <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center p-3">
               <Image 
                 src="/amazon_logo.png" 
@@ -51,16 +45,10 @@ export default function MarketplaceSection() {
               <span>Buy on Amazon</span>
               <ExternalLink size={18} />
             </button>
-          </motion.div>
+          </div>
 
           {/* Flipkart Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group"
-          >
+          <div className="bg-dark-surface border border-dark-border rounded-xl p-8 text-center hover:border-gold-500/50 transition-all duration-300 group">
             <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center p-3" style={{ backgroundColor: '#ffe70b' }}>
               <Image 
                 src="/flipkart_logo.png" 
@@ -80,7 +68,7 @@ export default function MarketplaceSection() {
               <span>Buy on Flipkart</span>
               <ExternalLink size={18} />
             </button>
-          </motion.div>
+          </div>
         </div>
 
         {/* Trust indicators */}
