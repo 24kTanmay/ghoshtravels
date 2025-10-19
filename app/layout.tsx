@@ -5,10 +5,16 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ldorado - Premium Poker Cards',
-  description: 'Discover premium quality poker cards from Ldorado. Available on Amazon and Flipkart with worldwide shipping.',
-  keywords: 'poker cards, premium cards, playing cards, Ldorado, Amazon, Flipkart',
-  authors: [{ name: 'Ldorado' }],
+  metadataBase: new URL('https://ghoshtravels.vercel.app'),
+  title: {
+    default: 'Ghosh Travels - Premium Car Rental & Tour Packages in Siliguri',
+    template: '%s | Ghosh Travels'
+  },
+  description: 'Experience the best car rental services and tour packages in Siliguri, Darjeeling, Sikkim, and North East India. Professional drivers, well-maintained vehicles, and 24/7 support.',
+  keywords: 'car rental Siliguri, Darjeeling tour packages, Sikkim tours, North East India travel, cab rental, tour operator Siliguri, Dooars packages, Himalayan tours, corporate car rental',
+  authors: [{ name: 'Ghosh Travels' }],
+  creator: 'Ghosh Travels',
+  publisher: 'Ghosh Travels',
   icons: {
     icon: [
       { url: '/icon-32x32.svg', type: 'image/svg+xml' },
@@ -21,9 +27,16 @@ export const metadata: Metadata = {
     shortcut: '/icon-32x32.svg',
   },
   openGraph: {
-    title: 'Ldorado - Premium Poker Cards',
-    description: 'Discover premium quality poker cards from Ldorado.',
+    title: 'Ghosh Travels - Premium Car Rental & Tour Packages',
+    description: 'Experience the best car rental services and tour packages in Siliguri, Darjeeling, Sikkim, and North East India.',
     type: 'website',
+    locale: 'en_IN',
+    siteName: 'Ghosh Travels',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ghosh Travels - Premium Car Rental & Tour Packages',
+    description: 'Experience the best car rental services and tour packages in North East India',
   },
 }
 

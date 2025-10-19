@@ -10,6 +10,12 @@ import Accreditations from '@/components/Accreditations'
 import MarketplaceSection from '@/components/MarketplaceSection'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Ghosh Travels offers premium car rental services and customized tour packages for Darjeeling, Sikkim, Dooars, and North East India. Professional drivers, clean vehicles, and 24/7 support.',
+}
 
 export default function Home() {
   return (
