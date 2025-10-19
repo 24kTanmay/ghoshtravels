@@ -1,12 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter, usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +24,29 @@ export default function Navigation() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMenuOpen(false)
+  const handleNavigation = (sectionId: string) => {
+    // If not on home page, navigate to home first
+    if (pathname !== '/') {
+      router.push('/')
+      // Wait for navigation and then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
+    setIsMenuOpen(false)
+  }
+
+  const scrollToSection = (sectionId: string) => {
+    handleNavigation(sectionId)
   }
 
   return (
@@ -125,7 +145,7 @@ export default function Navigation() {
               </div>
             </div>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => router.push('/contact')}
               className="px-3 lg:px-4 py-2 text-sm font-medium bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Contact
@@ -187,7 +207,7 @@ export default function Navigation() {
               Packages
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => router.push('/contact')}
               className="block w-full text-left px-3 py-2.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 rounded-lg transition-all duration-300 shadow-md"
             >
               Contact

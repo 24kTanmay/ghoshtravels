@@ -1,13 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 export default function HeroSection() {
+  const router = useRouter()
+  
   const scrollToMarketplace = () => {
     const element = document.getElementById('marketplace')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const handleBookingClick = () => {
+    router.push('/booking')
   }
 
   return (
@@ -42,7 +49,7 @@ export default function HeroSection() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.button
-              onClick={scrollToMarketplace}
+              onClick={handleBookingClick}
               className="px-6 py-3 text-lg font-medium bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -51,7 +58,7 @@ export default function HeroSection() {
             </motion.button>
             
             <motion.button
-              onClick={scrollToMarketplace}
+              onClick={handleBookingClick}
               className="px-6 py-3 text-lg font-medium bg-white text-purple-600 hover:bg-gray-50 hover:text-purple-700 rounded-lg transition-all duration-300 border-2 border-purple-500 hover:border-purple-600 hover:shadow-md"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
