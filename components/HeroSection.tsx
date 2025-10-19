@@ -11,18 +11,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/hero_image.png)'
-        }}
-      ></div>
-      
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-bg/70 via-dark-surface/60 to-dark-bg/70"></div>
-      
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 bg-white">
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
@@ -31,22 +20,34 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="mb-8 leading-relaxed">
-            <span className="text-2xl md:text-4xl lg:text-5xl font-medium text-dark-text-secondary block mb-3 leading-relaxed">Host a</span>
-            <span className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent block leading-relaxed py-2">Legendary Game Night</span>
+            <span className="text-2xl md:text-4xl lg:text-5xl font-medium text-gray-700 block mb-3 leading-relaxed">Your</span>
+            <span className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 bg-clip-text text-transparent block leading-relaxed py-2">Himalayan Adventure Awaits</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-dark-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
-            Ldorado: A casino-grade poker set crafted for players who demand the finest.
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Ghosh Travels helps you discover the majestic beauty<br />
+            of the Himalayas with our premium travel experiences.
           </p>
           
-          <motion.button
-            onClick={scrollToMarketplace}
-            className="px-6 py-3 text-lg font-medium bg-gold-500/20 text-gold-400 hover:bg-gold-500/30 hover:text-gold-300 rounded-full transition-all duration-300 border border-gold-500/30 hover:border-gold-500/50 hover:shadow-lg"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Claim Your Set
-          </motion.button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.button
+              onClick={scrollToMarketplace}
+              className="px-6 py-3 text-lg font-medium bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Book a Tour Package
+            </motion.button>
+            
+            <motion.button
+              onClick={scrollToMarketplace}
+              className="px-6 py-3 text-lg font-medium bg-white text-purple-600 hover:bg-gray-50 hover:text-purple-700 rounded-lg transition-all duration-300 border-2 border-purple-500 hover:border-purple-600 hover:shadow-md"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Rent a Car
+            </motion.button>
+          </div>
         </motion.div>
 
         {/* Floating card animation */}

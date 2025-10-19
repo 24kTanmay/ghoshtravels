@@ -2,6 +2,11 @@ import Navigation from '@/components/Navigation'
 import HeroSection from '@/components/HeroSection'
 import ProductsSection from '@/components/ProductsSection'
 import QualitySection from '@/components/QualitySection'
+import NewSection from '@/components/NewSection'
+import CustomerReviews from '@/components/CustomerReviews'
+import TourDestinations from '@/components/TourDestinations'
+import CustomTourPackages from '@/components/CustomTourPackages'
+import Accreditations from '@/components/Accreditations'
 import MarketplaceSection from '@/components/MarketplaceSection'
 import Footer from '@/components/Footer'
 
@@ -10,9 +15,14 @@ export default function Home() {
     <main className="min-h-screen bg-dark-bg">
       <Navigation />
       <HeroSection />
-      <ProductsSection />
+      {/* <ProductsSection /> */}
       <QualitySection />
-      <MarketplaceSection />
+      <NewSection />
+      <TourDestinations />
+      <CustomTourPackages />
+      <CustomerReviews />
+      {/* <Accreditations /> */}
+      {/* <MarketplaceSection /> */}
       <Footer />
     </main>
   )

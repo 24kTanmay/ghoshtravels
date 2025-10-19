@@ -16,13 +16,13 @@ export default function Logo({ className = "", size = 45 }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgb(250, 204, 21)" />
-            <stop offset="50%" stopColor="rgb(245, 158, 11)" />
-            <stop offset="100%" stopColor="rgb(217, 119, 6)" />
+          <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgb(139, 92, 246)" />
+            <stop offset="50%" stopColor="rgb(124, 58, 237)" />
+            <stop offset="100%" stopColor="rgb(109, 40, 217)" />
           </linearGradient>
         </defs>
-        <g fill="url(#goldGradient)">
+        <g fill="url(#purpleGradient)">
           <path d="M83.1121 59.45L73.8091 44.6104L90.8335 42.4067L100.137 57.2464"/>
           <path d="M73.4469 44.5762C74.0367 43.3316 73.5346 41.8305 72.3253 41.2235C71.1161 40.6164 69.6577 41.1333 69.0679 42.3779C68.4781 43.6226 68.9803 45.1236 70.1895 45.7307C71.3988 46.3377 72.8572 45.8209 73.4469 44.5762Z"/>
           <path d="M113.388 42.2823L130.447 44.1797L121.397 59.1843L104.338 57.2868"/>
