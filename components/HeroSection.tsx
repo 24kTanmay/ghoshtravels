@@ -11,7 +11,18 @@ export default function HeroSection() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/hero.jpg)'
+        }}
+      ></div>
+
+      {/* White gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/90 to-white/0"></div>
+
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div

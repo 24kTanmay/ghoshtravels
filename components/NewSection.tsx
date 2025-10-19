@@ -37,7 +37,7 @@ export default function NewSection() {
             <div className="border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full">
               <div className="bg-gray-100 rounded-lg h-48 mb-4 overflow-hidden flex-grow">
                 <img 
-                  src="/cars/Innova Crysta.avif" 
+                  src="/cars/innova crysta.avif" 
                   alt="Innova Crysta" 
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -49,7 +49,7 @@ export default function NewSection() {
             <div className="border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full">
               <div className="bg-gray-100 rounded-lg h-48 mb-4 overflow-hidden flex-grow">
                 <img 
-                  src="/cars/Tempo Traveller.jpg" 
+                  src="/cars/Route-tempo-traveller.webp" 
                   alt="Tempo Traveller" 
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -61,12 +61,12 @@ export default function NewSection() {
             <div className="border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full">
               <div className="bg-gray-100 rounded-lg h-48 mb-4 overflow-hidden flex-grow">
                 <img 
-                  src="/cars/BMW X5.jpeg" 
-                  alt="BMW X5" 
+                  src="/cars/bmw.avif" 
+                  alt="BMW" 
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mt-3 text-center">BMW X5</h3>
+              <h3 className="text-lg font-medium text-gray-900 mt-3 text-center">BMW</h3>
             </div>
           </div>
           
