@@ -40,7 +40,7 @@ export default function QualitySection() {
             </p>
             
             <p className="text-lg text-gray-600 leading-relaxed mb-8 text-left">
-              Whether you're a solo traveler, a family on vacation, or a professional on a business trip, we provide the perfect vehicle for your journey in and around Siliguri. Travel with confidence and comfort.
+              Whether you&apos;re a solo traveler, a family on vacation, or a professional on a business trip, we provide the perfect vehicle for your journey in and around Siliguri. Travel with confidence and comfort.
             </p>
 
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 text-left">
@@ -66,7 +66,7 @@ export default function QualitySection() {
                 <span className="text-gray-400 mt-2 mr-4 flex-shrink-0">•</span>
                 <div>
                   <span className="font-semibold text-gray-900">24/7 Roadside Assistance:</span>
-                  <span className="text-gray-600 ml-1">We're here for you anytime, day or night.</span>
+                  <span className="text-gray-600 ml-1">We&apos;re here for you anytime, day or night.</span>
                 </div>
               </li>
               <li className="flex items-start">

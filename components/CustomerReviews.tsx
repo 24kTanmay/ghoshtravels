@@ -91,7 +91,7 @@ export default function CustomerReviews() {
               </div>
               
               <p className="text-gray-700 mb-4 leading-relaxed">
-                "{review.review}"
+                &ldquo;{review.review}&rdquo;
               </p>
               
               <div className="border-t border-gray-200 pt-4">
