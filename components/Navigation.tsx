@@ -65,90 +65,43 @@ export default function Navigation() {
         <div className="flex items-center justify-between relative">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Ghosh Travels
+            <span className="text-xl font-newsreader font-bold text-brand-forest">
+              Ghosh <span className="italic font-normal text-brand-accent">Travels</span>
             </span>
           </div>
 
           <div className="hidden md:flex items-center space-x-1 flex-1 justify-center">
             <button
               onClick={() => scrollToSection('home')}
-              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-300"
+              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-full transition-all duration-300"
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection('about')}
-              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-300"
+              onClick={() => scrollToSection('fleet')}
+              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-full transition-all duration-300"
             >
-              About
+              Fleet
             </button>
             <button
-              onClick={() => scrollToSection('car-rental')}
-              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-300"
+              onClick={() => scrollToSection('destinations')}
+              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-full transition-all duration-300"
             >
-              Car Rental
+              Destinations
             </button>
             <button
-              onClick={() => scrollToSection('corporate-rental')}
-              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-300"
+              onClick={() => scrollToSection('packages')}
+              className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-full transition-all duration-300"
             >
-              Corporate Rental
+              Packages
             </button>
-            <div className="relative group">
-              <button className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-300">
-                Destinations
-              </button>
-              {/* Dropdown overlay */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="p-3 space-y-1">
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Darjeeling
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Sikkim
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Bhutan
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Dooars
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="relative group">
-              <button className="px-3 lg:px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-300">
-                Packages
-              </button>
-              {/* Dropdown overlay */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="p-3 space-y-1">
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Darjeeling
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Sikkim
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Bhutan
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Dooars
-                  </button>
-                  <button className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300">
-                    Assam Meghalaya
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Contact Button - Absolute Right */}
           <div className="hidden md:flex items-center">
             <button
               onClick={() => router.push('/contact')}
-              className="px-3 lg:px-4 py-2 text-sm font-medium bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+              className="px-5 py-2 text-sm font-bold bg-brand-forest text-white hover:bg-brand-sage rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Contact
             </button>
@@ -157,7 +110,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-purple-600 transition-colors duration-300 p-2 rounded-full hover:bg-gray-100"
+              className="text-gray-700 hover:text-brand-forest transition-colors duration-300 p-2 rounded-full hover:bg-gray-100"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -175,37 +128,25 @@ export default function Navigation() {
           <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 space-y-2 rounded-b-3xl">
             <button
               onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300"
+              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-lg transition-all duration-300"
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300"
+              onClick={() => scrollToSection('fleet')}
+              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-lg transition-all duration-300"
             >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('car-rental')}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300"
-            >
-              Car Rental
-            </button>
-            <button
-              onClick={() => scrollToSection('corporate-rental')}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300"
-            >
-              Corporate Rental
+              Fleet
             </button>
             <button
               onClick={() => scrollToSection('destinations')}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300"
+              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-lg transition-all duration-300"
             >
               Destinations
             </button>
             <button
               onClick={() => scrollToSection('packages')}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-300"
+              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-brand-forest hover:bg-stone-50 rounded-lg transition-all duration-300"
             >
               Packages
             </button>
@@ -214,7 +155,7 @@ export default function Navigation() {
                 router.push('/contact')
                 setIsMenuOpen(false)
               }}
-              className="block w-full text-center px-4 py-3 text-sm font-medium bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 rounded-lg transition-all duration-300 shadow-md"
+              className="block w-full text-center px-4 py-3 text-sm font-bold bg-brand-forest text-white rounded-lg transition-all duration-300 shadow-md"
             >
               Contact
             </button>

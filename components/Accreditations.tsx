@@ -43,7 +43,7 @@ const accreditations = [
 
 export default function Accreditations() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-700">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-brand-forest">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

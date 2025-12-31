@@ -1,8 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
+import { Inter, Newsreader } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
+const newsreader = Newsreader({ 
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-newsreader'
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ghoshtravels.vercel.app'),
@@ -47,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-dark-bg text-dark-text antialiased`}>
+      <body className={`${inter.className} ${newsreader.variable} bg-dark-bg text-dark-text antialiased`}>
         {children}
       </body>
     </html>

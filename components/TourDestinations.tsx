@@ -44,7 +44,7 @@ const destinations = [
 
 export default function TourDestinations() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F7F8FA' }}>
+    <section id="destinations" className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-cream">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,8 +53,8 @@ export default function TourDestinations() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Best Tour Packages for <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Darjeeling, Gangtok & Sikkim</span>
+          <h2 className="text-4xl md:text-5xl font-newsreader font-bold mb-4 text-gray-900 leading-tight">
+            Best Tour Packages for <span className="text-brand-forest italic">Darjeeling, Gangtok & Sikkim</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover the breathtaking beauty of Northeast India with our curated tour packages
@@ -83,7 +83,7 @@ export default function TourDestinations() {
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-2 mb-2">
-                  <MapPin size={16} className="text-purple-600" />
+                  <MapPin size={16} className="text-brand-forest" />
                   <h3 className="text-xl font-bold text-gray-900">{destination.name}</h3>
                 </div>
                 
@@ -110,7 +110,7 @@ export default function TourDestinations() {
                     {destination.highlights.map((highlight, idx) => (
                       <span 
                         key={idx}
-                        className="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full"
+                        className="text-xs bg-white text-brand-forest border border-brand-forest/20 px-2 py-1 rounded-full"
                       >
                         {highlight}
                       </span>
@@ -122,17 +122,19 @@ export default function TourDestinations() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <button className="px-8 py-3 border-2 border-purple-500 text-purple-600 font-semibold rounded-lg hover:bg-purple-50 hover:border-purple-600 transition-all duration-300">
-            View All Destinations
-          </button>
-        </motion.div>
+        {destinations.length >= 4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <button className="px-8 py-3 border-2 border-brand-forest text-brand-forest font-bold rounded-xl hover:bg-brand-forest hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+              Explore All Destinations
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   )

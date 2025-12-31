@@ -56,11 +56,11 @@ body {
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in-out;
   }
-  
+
   .animate-slide-up {
     animation: slideUp 0.5s ease-out;
   }
-  
+
   .animate-bounce-gentle {
     animation: bounceGentle 2s infinite;
   }
@@ -70,6 +70,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -80,6 +81,7 @@ body {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -87,9 +89,12 @@ body {
 }
 
 @keyframes bounceGentle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }

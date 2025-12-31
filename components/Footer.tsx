@@ -1,141 +1,161 @@
 'use client'
 
-import Image from 'next/image'
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { useRouter, usePathname } from 'next/navigation'
+import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleNavigation = (sectionId: string) => {
+    // If not on home page, navigate to home first
+    if (pathname !== '/') {
+      router.push('/')
+      // Wait for navigation and then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }
 
+  const scrollToSection = (sectionId: string) => {
+    // Map human-friendly names to actual IDs if necessary
+    const idMap: { [key: string]: string } = {
+      'home': 'home',
+      'fleet': 'fleet',
+      'tour-packages': 'packages',
+      'destinations': 'destinations',
+    }
+    handleNavigation(idMap[sectionId] || sectionId)
+  }
+
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <footer className="bg-brand-forest text-stone-100 min-h-[400px] flex flex-col justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+          
           {/* Brand Section */}
-          <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start mb-4 lg:mb-6">
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                Ghosh Travels
+          <div className="space-y-8 col-span-1 md:col-span-2 lg:col-span-1">
+            <div className="flex flex-col gap-4">
+              <span className="text-4xl font-newsreader font-bold text-white tracking-tight">
+                Ghosh <span className="italic font-normal text-brand-accent">Travels</span>
               </span>
+              <p className="text-stone-400 text-sm leading-relaxed max-w-xs opacity-90">
+                Crafting premium Himalayan journeys with luxury, safety, and local heart. Siliguri's most trusted travel partner since 2012.
+              </p>
             </div>
-            <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 text-base sm:text-base">
-              Premium car rental services in Siliguri and Northeast India. Your trusted travel partner.
-            </p>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-5 pt-2">
+              <a href="https://facebook.com/ghoshtravels" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-brand-accent transition-colors duration-300">
+                <Facebook size={20} strokeWidth={1.5} />
+                <span className="sr-only">Facebook</span>
+              </a>
+              <a href="https://instagram.com/ghoshtravels" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-brand-accent transition-colors duration-300">
+                <Instagram size={20} strokeWidth={1.5} />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a href="https://wa.me/919733111234" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-brand-accent transition-colors duration-300">
+                <MessageCircle size={20} strokeWidth={1.5} />
+                <span className="sr-only">WhatsApp</span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div className="text-center sm:text-left">
-            <h3 className="text-lg sm:text-lg font-semibold text-gray-900 mb-4 lg:mb-6">Quick Links</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li>
-                <button
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-600 hover:text-purple-600 transition-colors duration-300 text-base sm:text-base"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('quality')}
-                  className="text-gray-600 hover:text-purple-600 transition-colors duration-300 text-base sm:text-base"
-                >
-                  Car Rental
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('packages')}
-                  className="text-gray-600 hover:text-purple-600 transition-colors duration-300 text-base sm:text-base"
-                >
-                  Tour Packages
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('destinations')}
-                  className="text-gray-600 hover:text-purple-600 transition-colors duration-300 text-base sm:text-base"
-                >
-                  Destinations
-                </button>
-              </li>
+          <div>
+            <h3 className="text-xs font-black text-brand-accent tracking-[0.2em] uppercase mb-8">
+              Services
+            </h3>
+            <ul className="space-y-4">
+              {['Home', 'Fleet', 'Tour Packages', 'Destinations'].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                    className="text-stone-300 hover:text-white transition-colors duration-300 text-sm font-medium"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Information */}
-          <div className="text-center sm:text-left">
-            <h3 className="text-lg sm:text-lg font-semibold text-gray-900 mb-4 lg:mb-6">Contact Us</h3>
-            
-            <div className="space-y-3 sm:space-y-4 mb-6 lg:mb-8">
-              <div className="flex items-start justify-center sm:justify-start space-x-3 text-gray-600">
-                <MapPin size={16} className="text-purple-500 mt-1 flex-shrink-0" />
-                <span className="text-sm sm:text-base leading-relaxed">
+          <div className="lg:col-span-1">
+            <h3 className="text-xs font-black text-brand-accent tracking-[0.2em] uppercase mb-8">
+              Contact
+            </h3>
+            <div className="space-y-6 text-sm text-stone-400">
+              <div className="flex items-start gap-4">
+                <MapPin size={18} className="text-brand-accent shrink-0" />
+                <span className="leading-relaxed">
                   3rd Floor, Vyom Sachitra, 3C,<br />
                   Pranami Mandir Rd, Siliguri,<br />
                   West Bengal 734001
                 </span>
               </div>
               
-              <div className="flex items-center justify-center sm:justify-start space-x-3 text-gray-600">
-                <Mail size={16} className="text-purple-500 flex-shrink-0" />
-                <a 
-                  href="mailto:info@carrentalsiliguri.com"
-                  className="text-sm sm:text-base hover:text-purple-600 transition-colors duration-300"
-                >
+              <div className="flex items-center gap-4">
+                <Mail size={18} className="text-brand-accent shrink-0" />
+                <a href="mailto:info@ghoshtravels.com" className="hover:text-white transition-all">
                   info@ghoshtravels.com
                 </a>
               </div>
               
-              <div className="flex items-center justify-center sm:justify-start space-x-3 text-gray-600">
-                <Phone size={16} className="text-purple-500 flex-shrink-0" />
-                <div className="text-sm sm:text-base">
-                  <a 
-                    href="tel:+919733111234"
-                    className="hover:text-purple-600 transition-colors duration-300 block"
-                  >
+              <div className="flex items-start gap-4">
+                <Phone size={18} className="text-brand-accent shrink-0" />
+                <div className="space-y-1">
+                  <a href="tel:+919733111234" className="hover:text-white transition-all block">
                     +91 97331 11234
                   </a>
-                  <a 
-                    href="tel:+919733222567"
-                    className="hover:text-purple-600 transition-colors duration-300 block"
-                  >
+                  <a href="tel:+919733222567" className="hover:text-white transition-all block">
                     +91 97332 22567
                   </a>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-2 sm:space-y-3">
-              <h4 className="text-base sm:text-lg font-semibold text-gray-900">Business Hours</h4>
-              <div className="text-gray-600 text-sm sm:text-base">
-                <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
-                <p>Sunday: 10:00 AM - 6:00 PM</p>
+          {/* Business Hours Column */}
+          <div>
+            <h3 className="text-xs font-black text-brand-accent tracking-[0.2em] uppercase mb-8">
+              Concierge
+            </h3>
+            <div className="space-y-6 text-sm text-stone-400">
+              <div className="space-y-1">
+                <p className="text-white font-medium">Standard Hours</p>
+                <p>Mon - Sat: 9 AM - 8 PM</p>
+                <p>Sunday: 10 AM - 6 PM</p>
               </div>
+              <p className="italic text-xs leading-relaxed opacity-60">
+                Emergency 24/7 roadside assistance available for all active bookings.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-200 mt-8 lg:mt-12 pt-6 lg:pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
-            <div className="text-gray-600 text-sm sm:text-base">
-              © 2024 Ghosh Travels. All rights reserved.
-            </div>
-            <div className="flex flex-wrap justify-center sm:justify-end space-x-4 sm:space-x-6 text-sm sm:text-base">
-              <a href="/privacy-policy" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                Privacy Policy
-              </a>
-              <a href="/terms-of-service" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                Terms of Service
-              </a>
-              <a href="/refund-policy" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                Refund & Cancellation Policy
-              </a>
-            </div>
+        </div>
+      </div>
+
+      {/* Legal Footer */}
+      <div className="border-t border-white/10 w-full py-8 text-stone-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs tracking-wide">
+            © 2024 Ghosh Travels. All rights reserved. Registered under WB Tourism Board.
+          </p>
+          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+            <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy</a>
+            <a href="/terms-of-service" className="hover:text-white transition-colors duration-300">Terms</a>
+            <a href="/refund-policy" className="hover:text-white transition-colors duration-300">Refunds</a>
           </div>
         </div>
       </div>

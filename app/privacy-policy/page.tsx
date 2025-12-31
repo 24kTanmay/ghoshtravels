@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
       <Navigation />
       
       <div className="relative h-[200px]">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 to-purple-600" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-forest to-brand-sage" />
         <div className="relative h-full flex items-center justify-center">
           <h1 className="text-4xl font-bold text-white">Privacy Policy</h1>
         </div>

@@ -32,10 +32,17 @@ module.exports = {
           400: '#fbbf24',
           500: '#f59e0b',
           600: '#d97706',
+        },
+        brand: {
+          forest: '#0F2F24',
+          cream: '#F5F5F0',
+          sage: '#2D5A4C',
+          accent: '#D4AF37',
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        newsreader: ['var(--font-newsreader)', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

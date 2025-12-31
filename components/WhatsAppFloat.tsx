@@ -1,7 +1,7 @@
 'use client'
 
 export default function WhatsAppFloat() {
-  const phoneNumber = '918900058536' // Format: country code + number without + or spaces
+  const phoneNumber = '919733111234' // Synchronized with Official Contact
   const message = 'Hi! I would like to inquire about your tour packages and car rental services.'
 
   return (

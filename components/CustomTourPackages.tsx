@@ -46,22 +46,22 @@ const packages = [
     groupSize: "4-10 People",
     price: "₹35,999",
     rating: 4.9,
-    includes: ["Tempo Traveller", "All Hotels", "All Meals", "Sightseeing"]
+    includes: ["Wagon R / SUV", "All Hotels", "All Meals", "Sightseeing"]
   }
 ]
 
 const StarRating = ({ rating }: { rating: number }) => {
   return (
     <div className="flex items-center gap-1">
-      <Star size={14} className="text-yellow-400 fill-yellow-400" />
-      <span className="text-sm font-medium text-gray-700">{rating}</span>
+      <Star size={14} className="text-brand-accent fill-brand-accent" />
+      <span className="text-sm font-bold text-gray-900">{rating}</span>
     </div>
   )
 }
 
 export default function CustomTourPackages() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,8 +70,8 @@ export default function CustomTourPackages() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Special Customized Tour <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Packages</span>
+          <h2 className="text-4xl md:text-5xl font-newsreader font-bold mb-4 text-gray-900">
+            Special Customized Tour <span className="text-brand-forest italic">Packages</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Carefully crafted tour experiences with comfortable transport and premium accommodations
@@ -127,7 +127,7 @@ export default function CustomTourPackages() {
                     {pkg.includes.map((item, idx) => (
                       <span 
                         key={idx}
-                        className="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full"
+                        className="text-xs bg-brand-cream text-brand-forest border border-brand-forest/10 px-2 py-1 rounded-full"
                       >
                         {item}
                       </span>
@@ -140,9 +140,9 @@ export default function CustomTourPackages() {
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="text-sm text-gray-500">Starting from</span>
-                      <div className="text-2xl font-bold text-purple-600">{pkg.price}</div>
+                      <div className="text-2xl font-bold text-brand-forest">{pkg.price}</div>
                     </div>
-                    <button className="px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-300">
+                    <button className="px-5 py-2.5 bg-brand-forest text-white text-sm font-bold rounded-xl hover:bg-brand-sage transition-all duration-300 shadow-md">
                       Book Now
                     </button>
                   </div>
@@ -152,20 +152,22 @@ export default function CustomTourPackages() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <button className="px-8 py-3 border-2 border-purple-500 text-purple-600 font-semibold rounded-lg hover:bg-purple-50 hover:border-purple-600 transition-all duration-300 mr-4">
-            View All Packages
-          </button>
-          <button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg">
-            Customize Your Tour
-          </button>
-        </motion.div>
+        {packages.length >= 4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12 space-x-4"
+          >
+            <button className="px-8 py-4 border-2 border-brand-forest text-brand-forest font-bold rounded-xl hover:bg-stone-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+              View All Packages
+            </button>
+            <button className="px-8 py-4 bg-brand-forest text-white font-bold rounded-xl hover:bg-brand-sage transition-all duration-300 shadow-lg hover:shadow-xl">
+              Customize Your Tour
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   )

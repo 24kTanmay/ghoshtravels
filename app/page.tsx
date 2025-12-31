@@ -1,35 +1,30 @@
 import Navigation from '@/components/Navigation'
 import HeroSection from '@/components/HeroSection'
-import ProductsSection from '@/components/ProductsSection'
-import QualitySection from '@/components/QualitySection'
-import NewSection from '@/components/NewSection'
+import FleetShowcase from '@/components/FleetShowcase'
 import CustomerReviews from '@/components/CustomerReviews'
 import TourDestinations from '@/components/TourDestinations'
 import CustomTourPackages from '@/components/CustomTourPackages'
 import Accreditations from '@/components/Accreditations'
-import MarketplaceSection from '@/components/MarketplaceSection'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Ghosh Travels offers premium car rental services and customized tour packages for Darjeeling, Sikkim, Dooars, and North East India. Professional drivers, clean vehicles, and 24/7 support.',
+  title: 'Premium Car Rental Siliguri & Tour Packages Darjeeling, Sikkim',
+  description: 'Book premium car rentals in Siliguri and customized tour packages for Darjeeling, Gangtok, and Sikkim. Best prices for Innova Crysta, Swift Dzire, and more with expert drivers.',
 }
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-dark-bg">
+      <h1 className="sr-only">Premium Car Rental Siliguri & Himalayan Tour Packages - Ghosh Travels</h1>
       <Navigation />
       <HeroSection />
-      {/* <ProductsSection /> */}
-      <QualitySection />
-      <NewSection />
+      <FleetShowcase />
       <TourDestinations />
       <CustomTourPackages />
       <CustomerReviews />
       {/* <Accreditations /> */}
-      {/* <MarketplaceSection /> */}
       <Footer />
       <WhatsAppFloat />
     </main>

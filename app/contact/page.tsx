@@ -19,7 +19,7 @@ export default function ContactPage() {
             backgroundImage: 'url(/hero.jpg)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/70 to-purple-600/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-forest/90 to-brand-forest/70" />
         <div className="relative h-full flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -46,12 +46,12 @@ export default function ContactPage() {
             transition={{ delay: 0.1 }}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow"
           >
-            <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <Phone className="text-purple-600" size={28} />
+            <div className="bg-brand-cream w-16 h-16 rounded-full flex items-center justify-center mb-6">
+              <Phone className="text-brand-forest" size={28} />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
             <p className="text-gray-600 mb-4">Available 24/7 for your convenience</p>
-            <a href="tel:+918900058536" className="text-purple-600 font-semibold hover:text-purple-700 text-lg">
+            <a href="tel:+918900058536" className="text-brand-forest font-semibold hover:text-purple-700 text-lg">
               +91 8900058536
             </a>
             <p className="text-sm text-gray-500 mt-2">Mon - Sun: 24 Hours</p>
@@ -63,12 +63,12 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow"
           >
-            <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <Mail className="text-purple-600" size={28} />
+            <div className="bg-brand-cream w-16 h-16 rounded-full flex items-center justify-center mb-6">
+              <Mail className="text-brand-forest" size={28} />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
             <p className="text-gray-600 mb-4">Get a response within 24 hours</p>
-            <a href="mailto:info@ghoshtravels.com" className="text-purple-600 font-semibold hover:text-purple-700 break-all">
+            <a href="mailto:info@ghoshtravels.com" className="text-brand-forest font-semibold hover:text-purple-700 break-all">
               info@ghoshtravels.com
             </a>
             <p className="text-sm text-gray-500 mt-2">We reply promptly</p>
@@ -80,8 +80,8 @@ export default function ContactPage() {
             transition={{ delay: 0.3 }}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow"
           >
-            <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <MapPin className="text-purple-600" size={28} />
+            <div className="bg-brand-cream w-16 h-16 rounded-full flex items-center justify-center mb-6">
+              <MapPin className="text-brand-forest" size={28} />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Visit Us</h3>
             <p className="text-gray-600 mb-4">Come say hello at our office</p>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-forest focus:border-brand-forest transition-all"
                     required
                   />
                 </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-forest focus:border-brand-forest transition-all"
                     required
                   />
                 </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     placeholder="+91 XXXXX XXXXX"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-forest focus:border-brand-forest transition-all"
                     required
                   />
                 </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                 <input
                   type="checkbox"
                   id="privacy"
-                  className="w-4 h-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                  className="w-4 h-4 text-brand-forest focus:ring-brand-forest border-gray-300 rounded"
                 />
                 <label htmlFor="privacy" className="text-sm text-gray-600">
                   I agree to the privacy policy and terms of service
@@ -184,7 +184,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="bg-brand-forest text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
               >
                 <Send size={20} />
                 Send Message
@@ -202,7 +202,7 @@ export default function ContactPage() {
             {/* Business Hours */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="text-purple-600" size={24} />
+                <Clock className="text-brand-forest" size={24} />
                 <h3 className="text-xl font-bold text-gray-900">Business Hours</h3>
               </div>
               <div className="space-y-3">
@@ -219,7 +219,7 @@ export default function ContactPage() {
                   <span className="text-gray-600">10:00 AM - 4:00 PM</span>
                 </div>
                 <div className="pt-3 border-t border-gray-200">
-                  <p className="text-sm text-purple-600 font-semibold">
+                  <p className="text-sm text-brand-forest font-semibold">
                     📞 24/7 Emergency Support Available
                   </p>
                 </div>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                 href="https://wa.me/918900058536"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-white text-purple-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-50 transition-all duration-300"
+                className="flex items-center justify-center gap-2 bg-white text-brand-forest font-semibold py-3 px-6 rounded-lg hover:bg-gray-50 transition-all duration-300"
               >
                 <MessageCircle size={20} />
                 Chat on WhatsApp
@@ -276,23 +276,23 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">✓</span>
+                  <span className="text-brand-forest mt-1">✓</span>
                   <span>15+ years of travel expertise</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">✓</span>
+                  <span className="text-brand-forest mt-1">✓</span>
                   <span>24/7 customer support</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">✓</span>
+                  <span className="text-brand-forest mt-1">✓</span>
                   <span>Best price guarantee</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">✓</span>
+                  <span className="text-brand-forest mt-1">✓</span>
                   <span>Professional & courteous drivers</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">✓</span>
+                  <span className="text-brand-forest mt-1">✓</span>
                   <span>Well-maintained fleet</span>
                 </li>
               </ul>

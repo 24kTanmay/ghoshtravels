@@ -18,7 +18,7 @@ export default function RefundPolicyPage() {
             backgroundImage: 'url(/hero.jpg)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 to-purple-600/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-forest/90 to-brand-forest/70" />
         <div className="relative h-full flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -61,7 +61,7 @@ export default function RefundPolicyPage() {
             </ul>
           </section>
 
-          <section className="bg-purple-50 rounded-2xl p-6 border-l-4 border-purple-500">
+          <section className="bg-brand-cream rounded-2xl p-6 border-l-4 border-brand-forest">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Landslides, Strikes, and Force Majeure</h2>
             <p className="mb-4 font-medium">
               Travel in Himalayan regions like Darjeeling, Sikkim, and Bhutan can be unpredictable. our specific policy for these situations is as follows:
