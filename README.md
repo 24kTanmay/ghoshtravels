@@ -1,130 +1,77 @@
-# BlockCasino - Premium Crypto Casino Landing Page
+# Ghosh Travels - Premium Travel & Car Rental
 
-A sophisticated, premium casino website landing page built with modern web technologies and featuring a carefully crafted color palette that evokes luxury and trust.
+Ghosh Travels is a sophisticated, premium travel agency website specializing in Himalayan tour packages and car rental services across North Bengal and Northeast India. Built with **Next.js**, **Tailwind CSS**, and **Framer Motion**, it offers a high-performance, user-centric experience optimized for both travelers and search engines.
 
-## Color Palette
+## 🚀 Key Features
 
-The design uses a refined color scheme that creates a premium casino atmosphere:
+### 1. User-Centric Booking Flow
+- **Two-Step Conversion Optimization**: Reduced friction by separating journey details from personal information. Users can check pricing first, leading to higher trust and completion rates.
+- **Dynamic Tabs**: Seamlessly switch between Daily Rental, Point-to-Point Drop/Pickup, and Customized Tour Packages.
+- **Estimated Pricing**: Real-time feedback for users before they commit to booking.
 
-- **#006A6A Teal Felt**: Main background for tables and content areas
-- **#C92A2A Chip Red**: Call-to-actions, player turn indicators, and error messages
-- **#593829 Rich Mahogany**: Borders, footers, headers, and card backs
-- **#E9ECEF Cool Grey**: Secondary backgrounds, card faces, and UI elements
-- **#D4AF37 Muted Gold**: VIP status indicators, logos, and premium feature highlights
+### 2. Regional SEO & Copywriting
+- **Targeted Headlines**: Optimized for high-intent keywords like "Best Tour Packages for Darjeeling, Gangtok & Sikkim" and "Car Rental in Siliguri & Bagdogra."
+- **Airport Integration**: Specifically optimized for travelers arriving at **Bagdogra (IXB)** airport.
+- **Semantic HTML**: Proper heading hierarchy and meta tags for superior Google search rankings.
 
-## Features
+### 3. Comprehensive Legal & Safety Framework
+- **Refund & Cancellation Policy**: Specialized terms for the Himalayan region, including specific clauses for **landslides, natural calamities, and local strikes (Bandhs)**.
+- **Privacy & Terms**: Professional, modern legal pages built-in.
+- **Hill Area Safeguards**: Visual warnings (Amber alerts) for rental limitations in hilly terrains, ensuring transparency.
 
-### Design Elements
-- **Full-bleed Hero Section**: High-resolution poker night background with rich textures and dramatic lighting
-- **Premium Typography**: Elegant serif fonts (Playfair Display) for headings and clean sans-serif fonts (Inter) for body text
-- **Sophisticated Animations**: Subtle hover effects, gentle pulse animations, and smooth transitions
-- **Responsive Design**: Optimized for all screen sizes from mobile to desktop
+### 4. Premium Design & Interactions
+- **Visual Excellence**: Modern purple-to-indigo gradients and a clean, responsive layout.
+- **Micro-Animations**: Smooth entry animations and hover effects using Framer Motion.
+- **WhatsApp Integration**: Floating contact button for instant customer support.
 
-### Interactive Components
-- **Animated Statistics Counter**: Numbers animate when they come into view
-- **Floating Poker Cards**: CSS animations with hover effects
-- **Interactive Image Gallery**: Click to change main showcase image
-- **Smooth Scrolling Navigation**: Enhanced user experience
-- **Parallax Effects**: Subtle background movement on scroll
-- **Ripple Button Effects**: Modern touch feedback
+## 🛠️ Technical Stack
 
-### Sections
-1. **Hero Section**: Welcoming message with call-to-action and animated statistics
-2. **Features Grid**: Casino, Rewards, and Sports betting sections
-3. **Premium Poker Showcase**: High-quality product imagery with detailed descriptions
-4. **Customer Testimonials**: Social proof with sophisticated layouts and VIP badges
-5. **Media Reviews**: Credibility through featured media mentions
-6. **Footer**: Comprehensive links and legal information
+- **Framework**: [Next.js 14+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Fonts**: [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts
 
-## Technical Implementation
+## 📁 Project Structure
 
-### HTML Structure
-- Semantic HTML5 markup
-- Accessible navigation and content structure
-- SEO-friendly meta tags and structure
-- Optimized image loading with placeholders
-
-### CSS Features
-- CSS Grid and Flexbox for responsive layouts
-- CSS Custom Properties (variables) for consistent theming
-- Advanced animations and transitions
-- Mobile-first responsive design
-- Performance-optimized animations
-
-### JavaScript Functionality
-- Intersection Observer API for scroll-triggered animations
-- Smooth scrolling and navigation
-- Dynamic content interactions
-- Performance-optimized scroll handlers
-- Loading screen with smooth transitions
-
-## File Structure
-
-```
-Casino_site/
-├── index.html          # Main HTML structure
-├── styles.css          # Complete styling with animations
-├── script.js          # Interactive functionality
-└── README.md          # Project documentation
+```bash
+Ghosh_Travels/
+├── app/                  # App Router: Pages for Home, Booking, Policies
+├── components/           # Reusable UI (Navigation, Footer, Sections)
+├── public/               # Static assets (images, icons)
+├── styles/               # Global CSS
+└── next.config.js        # Next.js configuration
 ```
 
-## Browser Compatibility
+## 🏁 Getting Started
 
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## Performance Features
-
-- Optimized animations using CSS transforms
-- Throttled scroll events for smooth performance
-- Efficient intersection observers
-- Minimal DOM manipulation
-- Optimized loading sequences
-
-## Getting Started
-
-1. Clone or download the project files
-2. Open `index.html` in a modern web browser
-3. For local development, use a local server:
+1. **Clone the repository:**
    ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js (if you have http-server installed)
-   npx http-server
+   git clone https://github.com/24kTanmay/ghoshtravels.git
    ```
 
-## Customization
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### Colors
-All colors are defined as CSS custom properties in the `:root` selector at the top of `styles.css`. You can easily modify the color scheme by changing these values.
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-### Typography
-Font families are defined as custom properties and can be easily changed:
-- `--font-heading`: Currently set to 'Playfair Display'
-- `--font-body`: Currently set to 'Inter'
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-### Animations
-Animation durations and effects can be customized by modifying the CSS animations and JavaScript timing values.
+## 🌍 SEO Metadata
 
-## Future Enhancements
+The site is pre-configured with SEO best practices:
+- **Title**: Ghosh Travels - Premium Car Rental & Tour Packages
+- **Global Metadata**: Defined in `app/layout.tsx` for optimal social sharing and search indexing.
+- **Mobile First**: Fully responsive design for travelers on the go.
 
-- Integration with backend APIs
-- User authentication system
-- Live chat functionality
-- Progressive Web App (PWA) features
-- Advanced game previews
-- Multi-language support
+## 📄 License
 
-## License
-
-This project is designed for educational and demonstration purposes. Please ensure you have appropriate licensing for any commercial use of casino-related imagery and content.
-
-## Credits
-
-- Fonts: Google Fonts (Playfair Display, Inter)
-- Color Palette: Custom premium casino theme
-- Images: Placeholder images for demonstration
-- Icons: Unicode emoji characters
+© 2024 Ghosh Travels. All Rights Reserved.
