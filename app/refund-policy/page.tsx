@@ -82,7 +82,7 @@ export default function RefundPolicyPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">4. No-Show Policy</h2>
             <p>
-              If you fail to arrive at the scheduled pickup point or hotel without prior notice, it will be treated as a "No-Show," and no refund will be provided for that segment or the entire tour.
+              If you fail to arrive at the scheduled pickup point or hotel without prior notice, it will be treated as a &quot;No-Show,&quot; and no refund will be provided for that segment or the entire tour.
             </p>
           </section>
 
