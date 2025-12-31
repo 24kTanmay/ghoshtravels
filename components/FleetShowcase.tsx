@@ -145,7 +145,7 @@ export default function FleetShowcase() {
                     className="mt-12 text-center max-w-md"
                   >
                     <p className="text-gray-600 leading-relaxed italic">
-                      "{selectedCar.description}"
+                      &quot;{selectedCar.description}&quot;
                     </p>
                     <button 
                       onClick={() => router.push('/booking')}

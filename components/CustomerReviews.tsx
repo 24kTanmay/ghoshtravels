@@ -108,7 +108,7 @@ export default function CustomerReviews() {
                       </div>
 
                       <p className="text-base md:text-lg text-gray-800 font-normal leading-snug mb-4 line-clamp-3">
-                        "{review.review}"
+                        &quot;{review.review}&quot;
                       </p>
 
                       <div className="flex items-center gap-3 mt-auto">

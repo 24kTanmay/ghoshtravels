@@ -50,7 +50,7 @@ export default function Footer() {
                 Ghosh <span className="italic font-normal text-brand-accent">Travels</span>
               </span>
               <p className="text-stone-400 text-sm leading-relaxed max-w-xs opacity-90">
-                Crafting premium Himalayan journeys with luxury, safety, and local heart. Siliguri's most trusted travel partner since 2012.
+                Crafting premium Himalayan journeys with luxury, safety, and local heart. Siliguri&apos;s most trusted travel partner since 2012.
               </p>
             </div>
             
