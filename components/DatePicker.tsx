@@ -142,8 +142,7 @@ export default function PremiumDatePicker({ label, selected, onChange, placehold
               showOutsideDays
               fixedWeeks
               components={{
-                IconLeft: () => <ChevronLeft size={18} />,
-                IconRight: () => <ChevronRight size={18} />,
+                Chevron: (props) => props.orientation === 'left' ? <ChevronLeft size={18} /> : <ChevronRight size={18} />
               }}
             />
           </motion.div>
