@@ -97,16 +97,27 @@ export default function BookingPage() {
 }
 
 function DailyRentalForm() {
+  const [showContactInfo, setShowContactInfo] = useState(false)
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!showContactInfo) {
+      setShowContactInfo(true)
+    } else {
+      console.log('Booking submitted')
+    }
+  }
+
   return (
     <div>
-      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg">
-        <p className="text-blue-700 text-sm font-semibold flex items-center gap-2">
-          <span className="text-lg">ℹ️</span>
+      <div className="bg-orange-50 border-l-4 border-orange-500 p-4 mb-8 rounded-r-lg shadow-sm">
+        <p className="text-orange-800 text-sm font-semibold flex items-center gap-2">
+          <span className="text-lg">⚠️</span>
           CAB DAILY RENTAL IS NOT APPLICABLE FOR HILL AREAS
         </p>
       </div>
       
-      <form className="space-y-8">
+      <form className="space-y-8" onSubmit={handleSearch}>
         {/* Main Booking Details */}
         <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -152,13 +163,13 @@ function DailyRentalForm() {
           </div>
         </div>
 
-        {/* Vehicle & Passenger Info */}
+        {/* Vehicle Info */}
         <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Package size={20} className="text-purple-600" />
-            Vehicle & Contact
+            Vehicle Details
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Vehicle Type</label>
               <select className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all text-gray-700">
@@ -180,36 +191,58 @@ function DailyRentalForm() {
                 <option>8+ Passengers</option>
               </select>
             </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-              <input
-                type="tel"
-                placeholder="+91 XXXXX XXXXX"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
-            </div>
           </div>
         </div>
+
+        {/* Price/Contact Info Animation */}
+        {showContactInfo && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="space-y-6 overflow-hidden"
+          >
+            <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 text-center shadow-inner">
+              <p className="text-purple-600 text-sm font-medium mb-1">Estimated Price</p>
+              <p className="text-3xl font-bold text-purple-700">₹2,500.00</p>
+              <p className="text-xs text-purple-500 mt-2">Final pricing may vary based on actual distance and fuel</p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-gray-200 text-left shadow-md">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Complete Your Booking</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your name"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+91 XXXXX XXXXX"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-16 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-8 md:px-16 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg flex items-center gap-2"
           >
-            Search Cabs →
+            {showContactInfo ? 'Book Now →' : 'Check Pricing & Availability'}
           </button>
-          <p className="text-sm text-gray-500">
-            💚 Free cancellation • 🚗 Clean & sanitized vehicles
+          <p className="text-sm text-gray-500 hidden sm:block">
+            {showContactInfo ? '🔒 Secure SSL Encryption' : '💚 No-obligation quote'}
           </p>
         </div>
       </form>
@@ -218,9 +251,20 @@ function DailyRentalForm() {
 }
 
 function DropPickupForm() {
+  const [showContactInfo, setShowContactInfo] = useState(false)
+
+  const handleQuote = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!showContactInfo) {
+      setShowContactInfo(true)
+    } else {
+      console.log('Quote requested')
+    }
+  }
+
   return (
     <div>
-      <form className="space-y-8">
+      <form className="space-y-8" onSubmit={handleQuote}>
         {/* Journey Details */}
         <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -264,13 +308,13 @@ function DropPickupForm() {
           </div>
         </div>
 
-        {/* Vehicle & Contact */}
+        {/* Vehicle Info */}
         <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Package size={20} className="text-purple-600" />
-            Vehicle & Contact
+            Vehicle Details
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Vehicle Type</label>
               <select className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all text-gray-700">
@@ -292,36 +336,58 @@ function DropPickupForm() {
                 <option>8+ Passengers</option>
               </select>
             </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-              <input
-                type="tel"
-                placeholder="+91 XXXXX XXXXX"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
-            </div>
           </div>
         </div>
+
+        {/* Quote/Contact Info Animation */}
+        {showContactInfo && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="space-y-6 overflow-hidden"
+          >
+            <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center shadow-inner">
+              <p className="text-green-600 text-sm font-medium mb-1">Fixed Quote</p>
+              <p className="text-3xl font-bold text-green-700">₹1,800.00</p>
+              <p className="text-xs text-green-500 mt-2">Includes all taxes and tolls</p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-gray-200 text-left shadow-md">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Confirm Your Booking</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your name"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+91 XXXXX XXXXX"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-16 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-8 md:px-16 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg flex items-center gap-2"
           >
-            Get Quote →
+            {showContactInfo ? 'Confirm Booking →' : 'Get Instant Quote'}
           </button>
-          <p className="text-sm text-gray-500">
-            ⚡ Instant confirmation • 🛡️ Safe & secure
+          <p className="text-sm text-gray-500 hidden sm:block">
+            {showContactInfo ? '🛡️ Safe & Secure' : '⚡ Instant confirmation'}
           </p>
         </div>
       </form>
@@ -330,9 +396,20 @@ function DropPickupForm() {
 }
 
 function PackagesForm() {
+  const [showContactInfo, setShowContactInfo] = useState(false)
+
+  const handlePackageBooking = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!showContactInfo) {
+      setShowContactInfo(true)
+    } else {
+      console.log('Package booking submitted')
+    }
+  }
+
   return (
     <div>
-      <form className="space-y-8">
+      <form className="space-y-8" onSubmit={handlePackageBooking}>
         {/* Package Selection */}
         <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
@@ -372,60 +449,70 @@ function PackagesForm() {
           </div>
         </div>
 
-        {/* Contact Details */}
-        <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <MapPin size={20} className="text-purple-600" />
-            Contact Information
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-              <input
-                type="text"
-                placeholder="Enter your full name"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
+        {/* Contact Info Animation */}
+        {showContactInfo && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="space-y-6 overflow-hidden"
+          >
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 text-left shadow-md">
+              <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <MapPin size={20} className="text-purple-600" />
+                Contact Information
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your full name"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+91 XXXXX XXXXX"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  />
+                </div>
+              </div>
             </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-              <input
-                type="tel"
-                placeholder="+91 XXXXX XXXXX"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-              />
-            </div>
-          </div>
-        </div>
 
-        {/* Additional Requirements */}
-        <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 className="text-lg font-bold text-gray-800 mb-4">Special Requirements (Optional)</h3>
-          <textarea
-            placeholder="Let us know if you have any special requests, dietary requirements, or preferences..."
-            rows={4}
-            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all resize-none"
-          />
-        </div>
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Special Requirements (Optional)</h3>
+              <textarea
+                placeholder="Let us know if you have any special requests, dietary requirements, or preferences..."
+                rows={4}
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all resize-none"
+              />
+            </div>
+          </motion.div>
+        )}
 
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-16 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold py-4 px-8 md:px-16 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg flex items-center gap-2"
           >
-            Book Package →
+            {showContactInfo ? 'Book Package →' : 'Check Availability'}
           </button>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 hidden sm:block">
             🎯 Best price guarantee • 📞 24/7 support
           </p>
         </div>

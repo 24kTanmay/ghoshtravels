@@ -54,7 +54,7 @@ export default function TourDestinations() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Tour of Astonishing <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Destinations</span>
+            Best Tour Packages for <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Darjeeling, Gangtok & Sikkim</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover the breathtaking beauty of Northeast India with our curated tour packages

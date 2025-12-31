@@ -1,6 +1,5 @@
 'use client'
 
-import LogoText from './Logotext'
 import Image from 'next/image'
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 
@@ -19,10 +18,9 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start mb-4 lg:mb-6">
-              <LogoText 
-                size={40}
-                className="cursor-pointer transition-all duration-300 hover:scale-105 drop-shadow-[0_0_8px_rgba(139,92,246,0.4)] hover:drop-shadow-[0_0_12px_rgba(139,92,246,0.6)]"
-              />
+              <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Ghosh Travels
+              </span>
             </div>
             <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 text-base sm:text-base">
               Premium car rental services in Siliguri and Northeast India. Your trusted travel partner.
@@ -128,14 +126,14 @@ export default function Footer() {
               © 2024 Ghosh Travels. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center sm:justify-end space-x-4 sm:space-x-6 text-sm sm:text-base">
-              <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+              <a href="/privacy-policy" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+              <a href="/terms-of-service" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
-                Return Policy
+              <a href="/refund-policy" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+                Refund & Cancellation Policy
               </a>
             </div>
           </div>

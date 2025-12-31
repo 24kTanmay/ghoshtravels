@@ -13,7 +13,7 @@ export default function NewSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
-            Our <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Curated</span> Fleet
+            Car Rental Options in <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">Siliguri & Bagdogra</span>
           </h2>
           <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
             Well-maintained, sanitized, and ready for your next journey.

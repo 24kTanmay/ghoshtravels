@@ -59,7 +59,7 @@ export default function HeroSection() {
             
             <motion.button
               onClick={handleBookingClick}
-              className="px-6 py-3 text-lg font-medium bg-white text-purple-600 hover:bg-gray-50 hover:text-purple-700 rounded-lg transition-all duration-300 border-2 border-purple-500 hover:border-purple-600 hover:shadow-md"
+              className="px-6 py-3 text-lg font-medium bg-white text-purple-600 hover:bg-gray-50 hover:text-purple-700 rounded-lg transition-all duration-300 border-2 border-purple-500 hover:border-purple-600 shadow-[0_4px_14px_0_rgba(139,92,246,0.39)] hover:shadow-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

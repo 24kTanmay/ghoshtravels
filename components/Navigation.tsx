@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import Logo from './Logo'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -66,10 +65,9 @@ export default function Navigation() {
         <div className="flex items-center justify-between relative">
           {/* Logo */}
           <div className="flex items-center">
-            <Logo 
-              className="cursor-pointer transition-all duration-300 hover:scale-105 drop-shadow-[0_0_8px_rgba(139,92,246,0.4)] hover:drop-shadow-[0_0_12px_rgba(139,92,246,0.6)]"
-              size={36}
-            />
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Ghosh Travels
+            </span>
           </div>
 
           <div className="hidden md:flex items-center space-x-1 flex-1 justify-center">
